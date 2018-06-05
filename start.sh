@@ -30,6 +30,8 @@ else
         echo failed to create logs folder >2
         exit 1
     fi
+	
+	#rm -f /home/ddgadmin/monitor
     
     2>"logs/$timestamp.log" \
     qemu-system-x86_64 \
@@ -53,6 +55,7 @@ else
         -boot order=cd \
         -drive id=disk0,if=virtio,cache=none,format=raw,file=/dev/sda3 \
         -drive file="$config_files/virtio-win-0.1.141.iso",media=cdrom \
+		#-monitor unix:/home/ddgadmin/monitor,server,nowait \
         #-drive file="$config_files/Windows10.iso",index=3,media=cdrom \
         #qemu-system-x86_64
     exit 0
