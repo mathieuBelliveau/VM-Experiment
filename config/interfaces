@@ -1,0 +1,7 @@
+auto br0
+iface br0 inet dhcp
+	bridge_ports enp0s31f6
+	bridge_fd 9
+	bridge_hello 2
+	bridge_maxage 12
+	bridge_stp off
